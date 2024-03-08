@@ -1,0 +1,59 @@
+{
+    "name": "@vendure/payments-plugin",
+    "version": "2.1.8",
+    "license": "MIT",
+    "main": "package/index.js",
+    "types": "package/index.d.ts",
+    "files": [
+        "package/**/*"
+    ],
+    "private": false,
+    "scripts": {
+        "watch": "tsc -p ./tsconfig.build.json --watch",
+        "build": "rimraf package && tsc -p ./tsconfig.build.json",
+        "e2e": "cross-env PACKAGE=payments-plugin vitest --config ../../e2e-common/vitest.config.ts --run",
+        "e2e:watch": "cross-env PACKAGE=payments-plugin vitest --config ../../e2e-common/vitest.config.ts",
+        "lint": "eslint --fix .",
+        "ci": "yarn build",
+        "dev-server:mollie": "yarn build && DB=sqlite node -r ts-node/register e2e/mollie-dev-server.ts",
+        "dev-server:stripe": "yarn build && DB=sqlite node -r ts-node/register e2e/stripe-dev-server.ts"
+    },
+    "homepage": "https://www.vendure.io/",
+    "funding": "https://github.com/sponsors/michaelbromley",
+    "publishConfig": {
+        "access": "public"
+    },
+    "peerDependencies": {
+        "@mollie/api-client": "3.x",
+        "braintree": "3.x",
+        "stripe": "13.x"
+    },
+    "dependencies": {
+        "currency.js": "2.0.4"
+    },
+    "peerDependenciesMeta": {
+        "@mollie/api-client": {
+            "optional": true
+        },
+        "braintree": {
+            "optional": true
+        },
+        "stripe": {
+            "optional": true
+        }
+    },
+    "devDependencies": {
+        "@mollie/api-client": "^3.7.0",
+        "@types/braintree": "^2.22.15",
+        "@types/localtunnel": "2.0.1",
+        "@vendure/common": "^2.1.8",
+        "@vendure/core": "^2.1.8",
+        "@vendure/testing": "^2.1.8",
+        "braintree": "^3.16.0",
+        "localtunnel": "2.0.2",
+        "nock": "^13.1.4",
+        "rimraf": "^3.0.2",
+        "stripe": "^13.3.0",
+        "typescript": "4.9.5"
+    }
+}

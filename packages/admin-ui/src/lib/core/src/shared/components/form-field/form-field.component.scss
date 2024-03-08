@@ -1,0 +1,42 @@
+:host {
+    display: block;
+}
+
+.form-group {
+    label {
+        font-size: var(--font-size-sm);
+        color: var(--color-weight-800);
+        margin-bottom: 4px;
+        display: inline-block;
+    }
+}
+.tooltip-text {
+    font-size: var(--font-size-xs);
+    line-height: var(--font-size-sm);
+    margin-bottom: 4px;
+}
+.input-row {
+    display: flex;
+}
+
+::ng-deep .input-row {
+    input:not([type='checkbox']),
+    select,
+    textarea,
+    vdr-zone-selector,
+    vdr-facet-value-selector,
+    vdr-option-value-input,
+    vdr-affixed-input,
+    vdr-currency-input,
+    vdr-rich-text-editor {
+        width: 100%;
+    }
+}
+
+.input-row {
+    input:not([type='checkbox']),
+    select,
+    textarea {
+        width: 100%;
+    }
+}

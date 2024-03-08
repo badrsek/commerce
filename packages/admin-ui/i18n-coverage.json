@@ -1,0 +1,101 @@
+{
+  "generatedOn": "2024-03-04T16:07:38.832Z",
+  "lastCommit": "b2cb011f2bafcbd51c7542df4bf094cb2b823de2",
+  "translationStatus": {
+    "ar": {
+      "tokenCount": 763,
+      "translatedCount": 761,
+      "percentage": 100
+    },
+    "cs": {
+      "tokenCount": 763,
+      "translatedCount": 571,
+      "percentage": 75
+    },
+    "de": {
+      "tokenCount": 763,
+      "translatedCount": 761,
+      "percentage": 100
+    },
+    "en": {
+      "tokenCount": 763,
+      "translatedCount": 761,
+      "percentage": 100
+    },
+    "es": {
+      "tokenCount": 763,
+      "translatedCount": 761,
+      "percentage": 100
+    },
+    "fa": {
+      "tokenCount": 763,
+      "translatedCount": 761,
+      "percentage": 100
+    },
+    "fr": {
+      "tokenCount": 763,
+      "translatedCount": 758,
+      "percentage": 99
+    },
+    "he": {
+      "tokenCount": 763,
+      "translatedCount": 761,
+      "percentage": 100
+    },
+    "hr": {
+      "tokenCount": 763,
+      "translatedCount": 760,
+      "percentage": 100
+    },
+    "it": {
+      "tokenCount": 763,
+      "translatedCount": 761,
+      "percentage": 100
+    },
+    "ne": {
+      "tokenCount": 763,
+      "translatedCount": 750,
+      "percentage": 98
+    },
+    "pl": {
+      "tokenCount": 763,
+      "translatedCount": 400,
+      "percentage": 52
+    },
+    "pt_BR": {
+      "tokenCount": 763,
+      "translatedCount": 760,
+      "percentage": 100
+    },
+    "pt_PT": {
+      "tokenCount": 763,
+      "translatedCount": 609,
+      "percentage": 80
+    },
+    "ru": {
+      "tokenCount": 763,
+      "translatedCount": 761,
+      "percentage": 100
+    },
+    "sv": {
+      "tokenCount": 763,
+      "translatedCount": 755,
+      "percentage": 99
+    },
+    "uk": {
+      "tokenCount": 763,
+      "translatedCount": 761,
+      "percentage": 100
+    },
+    "zh_Hans": {
+      "tokenCount": 763,
+      "translatedCount": 541,
+      "percentage": 71
+    },
+    "zh_Hant": {
+      "tokenCount": 763,
+      "translatedCount": 387,
+      "percentage": 51
+    }
+  }
+}

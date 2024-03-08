@@ -1,0 +1,101 @@
+{
+  "name": "vendure",
+  "version": "10.2.2",
+  "private": true,
+  "engines": {
+    "node": ">= 10.12.0 < 11 || >= 12.00"
+  },
+  "scripts": {
+    "watch": "lerna run watch --parallel",
+    "watch:core-common": "lerna run --scope @vendure/common --scope @vendure/core watch --parallel",
+    "lint": "yarn eslint --fix",
+    "format": "prettier --write --html-whitespace-sensitivity ignore",
+    "docs:generate-typescript-docs": "ts-node scripts/docs/generate-typescript-docs.ts",
+    "docs:generate-graphql-docs": "ts-node scripts/docs/generate-graphql-docs.ts --api=shop && ts-node scripts/docs/generate-graphql-docs.ts --api=admin",
+    "docs:build": "yarn docs:generate-typescript-docs && yarn docs:generate-graphql-docs",
+    "codegen": "tsc -p scripts/codegen/plugins && ts-node scripts/codegen/generate-graphql-types.ts",
+    "version": "yarn check-imports && yarn check-angular-versions && yarn build && yarn check-core-type-defs && yarn generate-changelog && git add CHANGELOG* && git add */version.ts",
+    "dev-server:start": "cd packages/dev-server && yarn start",
+    "test": "lerna run test --stream --no-bail",
+    "e2e": "lerna run e2e --stream --no-bail",
+    "build": "lerna run build",
+    "check-imports": "ts-node scripts/check-imports.ts",
+    "check-core-type-defs": "ts-node scripts/check-core-type-defs.ts",
+    "check-angular-versions": "ts-node scripts/check-angular-versions.ts",
+    "generate-changelog": "ts-node scripts/changelogs/generate-changelog.ts",
+    "publish-release": "lerna publish -m \"chore: Publish %s\" --no-push --force-publish",
+    "publish-prerelease": "lerna publish -m \"chore: Pre-release %s\" prerelease --exact --no-push --force-publish --preid next --dist-tag next",
+    "publish-local": "lerna version --no-git-tag-version && cd scripts && ./publish-to-verdaccio.sh"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@graphql-codegen/add": "5.0.0",
+    "@graphql-codegen/cli": "5.0.0",
+    "@graphql-codegen/fragment-matcher": "5.0.0",
+    "@graphql-codegen/typed-document-node": "^5.0.1",
+    "@graphql-codegen/typescript": "4.0.1",
+    "@graphql-codegen/typescript-operations": "4.0.1",
+    "@graphql-tools/schema": "^10.0.0",
+    "@swc/core": "^1.3.78",
+    "@types/klaw-sync": "^6.0.1",
+    "@types/node": "^14.14.31",
+    "concurrently": "^8.2.1",
+    "conventional-changelog-core": "^4.2.4",
+    "cross-env": "^7.0.3",
+    "find": "^0.3.0",
+    "graphql": "16.8.0",
+    "husky": "^4.3.0",
+    "klaw-sync": "^6.0.0",
+    "lerna": "^7.1.5",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "tinybench": "^2.5.1",
+    "ts-node": "^10.9.1",
+    "typescript": "4.9.5",
+    "unplugin-swc": "^1.3.2",
+    "vitest": "^0.34.2"
+  },
+  "resolutions": {
+    "npm-packlist": "1.1.12"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/@types/jasmine",
+      "**/@types/jasminewd2"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "subject-case": [
+        2,
+        "always",
+        [
+          "sentence-case"
+        ]
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
+      "post-commit": "git update-index --again",
+      "pre-commit": "NODE_OPTIONS=\"--max-old-space-size=8096\" lint-staged"
+    }
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "eslint": "^8.41.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsdoc": "^45.0.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3"
+  }
+}

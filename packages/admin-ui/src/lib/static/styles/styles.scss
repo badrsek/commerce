@@ -1,0 +1,16 @@
+@import "global/sass-overrides";
+@import "global/clarity";
+@import "@clr/icons/clr-icons.min.css";
+@import "@ng-select/ng-select/themes/default.theme.css";
+@import '@angular/cdk/overlay-prebuilt.css';
+@import "global/buttons";
+@import "global/forms";
+@import "global/overrides";
+@import "global/utilities";
+@import "fonts";
+@import "global/global";
+
+@import 'theme/default';
+@import 'theme/dark';
+
+@import "rtl";

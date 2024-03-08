@@ -1,0 +1,10 @@
+:host {
+    padding: 0;
+    border: none;
+}
+
+input {
+    &[readonly] {
+        background-color: transparent;
+    }
+}
